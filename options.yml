@@ -1,0 +1,41 @@
+manual_seed: 100
+checkpoint_dir: ./model/training_checkpoints
+logs_dir: ./logs
+
+dataset:
+  root_dir: ./data
+  save_dir: ./data/dataset
+  data_dirs:
+    Fuji: [1080, 720]
+    SICE: [1067, 800]
+    SMID: [1080, 720]
+    LOL: [600, 400]
+    LOLv1: [384, 384]
+    RELLISUR: [625, 625]
+    Sony: [1080, 720]
+  validation_split: 0.2
+  batch_size: 8
+  use_augment: true
+  use_shuffle: true
+
+model:
+  out_channels: 3
+  n_feat: 40
+  stage: 1
+  num_blocks: [1, 2, 2]
+
+training:
+  total_iter: 300000
+  loss: mae
+  mixing_augs:
+    mixup: true
+    mixup_beta: 1.2
+    use_identity: true
+  scheduler:
+    periods: [92000, 208000]
+    m_mul: 1
+    lr_mins: [0.0003, 0.000001]
+  optimizer:
+    lr: 0.0002
+    clipnorm: true
+    betas: [0.9, 0.999]

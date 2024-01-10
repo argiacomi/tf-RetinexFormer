@@ -1,0 +1,4 @@
+*.ipynb
+data/*/
+!data/*.*
+.DS_Store
