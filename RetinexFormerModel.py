@@ -10,6 +10,27 @@ from model.scheduler import CosineDecayCycleRestarts
 from data import DataLoader
 from metrics import PSNR
 
+# tf.config.optimizer.set_experimental_options({
+# "auto_mixed_precision_cpu": 1,
+# "auto_parallel": 1,
+# "auto_mixed_precision_mkl": 1,
+# "dependency_optimization": 1,
+# "remapping": 0,
+# "layout_optimizer": 0,
+# "pin_to_host_optimization": 1,
+# "constant_folding": 1,
+# "debug_stripper": 1,
+# "scoped_allocator_optimization": 1,
+# "loop_optimization": 1,
+# "memory_optimization": 1,
+# "auto_mixed_precision_onednn_bfloat16": 1,
+# "arithmetic_optimization": 1,
+# "common_subgraph_elimination": 1,
+# "implementation_selector": 1,
+# "function_optimization": 1,
+# "shape_optimization": 1,
+# })
+
 
 class PrintLR(tfkc.Callback):
     def on_epoch_end(self, epoch, logs=None):

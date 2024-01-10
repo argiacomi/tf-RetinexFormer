@@ -1,6 +1,6 @@
 manual_seed: 100
-checkpoint_dir: gs://retinex_former_bucket/training_checkpoints
-logs_dir: gs://retinex_former_bucket/logs/
+checkpoint_dir: # gs://...
+logs_dir: # gs://...
 
 dataset:
   root_dir: ./data
