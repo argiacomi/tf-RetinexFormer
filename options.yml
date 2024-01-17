@@ -6,15 +6,19 @@ dataset:
   root_dir: ./data
   save_dir: ./data/dataset
   data_dirs:
-    Fuji: [1080, 720]
-    SICE: [1067, 800]
-    SMID: [1080, 720]
-    LOL: [600, 400]
+    Fuji: [2160, 3240]
+    SICEvL: [2160, 3840]
+    SICEvM: [1080, 1920]
+    SICEvS: [720, 1280]
+    SMID: [2160, 3240]
+    LOL: [400, 600]
     LOLv1: [384, 384]
     RELLISUR: [625, 625]
-    Sony: [1080, 720]
+    Sony: [2160, 3240]
   validation_split: 0.2
-  batch_size: 8
+  batch_size:
+    train: 8
+    val: 8
   use_augment: true
   use_shuffle: true
 
